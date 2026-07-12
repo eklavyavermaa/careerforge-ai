@@ -205,5 +205,6 @@ Validation errors (400) include a field-level `errors` array from express-valida
 - **Cloudinary**: create a free account, use the dashboard's API credentials directly.
 
 Deployed Link:
-frontend:  https://careerforge-ai-lac.vercel.app/dashboard
+frontend:  https://careerforge-ai-lac.vercel.app
+
 backend: https://careerforge-ai-backend-3dxb.onrender.com/api/v1/health
