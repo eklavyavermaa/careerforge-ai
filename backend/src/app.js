@@ -55,7 +55,7 @@ app.use('/api', globalLimiter);
 
 // --- Health check ---
 app.get('/api/v1/health', (req, res) => {
-  res.status(200).json({ success: true, message: 'CareerForge AI API is running.' });
+  res.status(200).send("HELLO FROM CAREERFORGE BACKEND");
 });
 
 // --- Routes ---
