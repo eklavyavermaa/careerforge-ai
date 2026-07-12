@@ -204,7 +204,6 @@ Validation errors (400) include a field-level `errors` array from express-valida
   simplicity), and use that connection string as `MONGO_URI`.
 - **Cloudinary**: create a free account, use the dashboard's API credentials directly.
 
-## Continuing development
-
-Open `ROADMAP.md` — it has a full "Project Continuation Summary" written specifically so
-a fresh Claude conversation (or Claude Code session) can pick up development seamlessly.
+Deployed Link:
+frontend:  https://careerforge-ai-lac.vercel.app/dashboard
+backend: https://careerforge-ai-backend-3dxb.onrender.com/api/v1/health
