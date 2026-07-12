@@ -38,7 +38,7 @@ export default function Register() {
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
         <FormField label="Full name" htmlFor="name" error={errors.name}>
-          <Input id="name" autoComplete="name" placeholder="Ishu Verma" {...register('name')} />
+          <Input id="name" autoComplete="name" placeholder="Enter Your Name" {...register('name')} />
         </FormField>
 
         <FormField label="Email" htmlFor="email" error={errors.email}>
