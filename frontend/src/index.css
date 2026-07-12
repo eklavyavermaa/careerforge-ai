@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  CareerForge design tokens.
+  Concept: a "forge" for your career -- graphite/steel surfaces, a molten
+  ember-orange primary accent, cool steel-blue secondary, and gold used
+  specifically for scores/achievements. The signature motif (see
+  <ScoreGauge/>) is a radial molten-gradient gauge used everywhere a score
+  is shown (ATS score, resume score, interview score, industry readiness).
+*/
+:root {
+  --background: #f6f7f9;
+  --foreground: #171a21;
+  --surface: #ffffff;
+  --surface-2: #eef0f3;
+  --border: #dfe3e8;
+  --muted: #6b7280;
+  --muted-foreground: #6b7280;
+
+  --ember: #ff6b35;
+  --ember-foreground: #ffffff;
+  --steel: #2f8fd1;
+  --steel-foreground: #ffffff;
+  --gold: #c98a02;
+  --sage: #10b57e;
+  --danger: #dc2626;
+  --danger-foreground: #ffffff;
+
+  --ring: var(--ember);
+  --radius: 0.75rem;
+
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.dark {
+  --background: #0d1117;
+  --foreground: #e6e9ef;
+  --surface: #151b23;
+  --surface-2: #1c2430;
+  --border: #29323d;
+  --muted: #8b96a5;
+  --muted-foreground: #8b96a5;
+
+  --ember: #ff7a45;
+  --ember-foreground: #12141a;
+  --steel: #4fb6e8;
+  --steel-foreground: #0d1117;
+  --gold: #f2b705;
+  --sage: #34d399;
+  --danger: #f5654b;
+  --danger-foreground: #12141a;
+
+  --ring: var(--ember);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-ember: var(--ember);
+  --color-ember-foreground: var(--ember-foreground);
+  --color-steel: var(--steel);
+  --color-steel-foreground: var(--steel-foreground);
+  --color-gold: var(--gold);
+  --color-sage: var(--sage);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 0.25rem);
+  --radius-sm: calc(var(--radius) - 0.375rem);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background-color: color-mix(in srgb, var(--ember) 30%, transparent);
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 999px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
